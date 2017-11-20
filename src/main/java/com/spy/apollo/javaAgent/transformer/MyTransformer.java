@@ -44,9 +44,11 @@ public class MyTransformer implements ClassFileTransformer {
 
                 CtMethod ctMethod = ctClass.getDeclaredMethod("test");
 
-                ctMethod.insertAfter("{ System.out.println(\"test method 调用完成\"); }");
+                ctMethod.insertBefore("{ System.out.println(\"test method begin\"); }");
+                //TODO 不支持insertAfter中访问insertBefore的变量
+                ctMethod.insertAfter("{ System.out.println(\"test method end\"); }");
 
-                return ctClass.toBytecode();
+                return ctClass.toBytecode();// 转成字节码
 
             } catch (Exception e) {
                 System.out.println(e);

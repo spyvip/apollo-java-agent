@@ -4,6 +4,7 @@ import org.junit.Test;
 
 /**
  * 模块名
+ * vm options:-javaagent:D:/gitlab/codi-product/apollo-java-agent/target/apollo-java-agent.jar
  *
  * @author shi.pengyan
  * @version 1.0 2017-07-21 14:22
